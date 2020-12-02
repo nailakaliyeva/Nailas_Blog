@@ -18,33 +18,34 @@
 </head>
 <body>
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top" style="background-color: #9cdaf7; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);">
+        
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">Flask Blog</a>
+          
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('main.home') }}">Home</a>
-              <a class="nav-item nav-link" href="{{ url_for('main.about') }}">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('main.about') }}" style="color: #3c5e75; font-size: 130%">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('main.home') }}" style="color: #3c5e75; font-size: 130%">Home</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">New Post</a>
-                <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
-                <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
+                <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}" style="color: #3c5e75; font-size: 130%">New Post</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.account') }}" style="color: #3c5e75; font-size: 130%">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.logout') }}" style="color: #3c5e75; font-size: 130%">Logout</a>
               {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
-                <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.login') }}" style="color: #3c5e75; font-size: 130%">Login</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.register') }}" style="color: #3c5e75; font-size: 130%">Register</a>
               {% endif %}
             </div>
           </div>
         </div>
       </nav>
     </header>
-    <main role="main" class="container">
+    <main role="main" class="container"  >
       <div class="row">
         <div class="col-md-8">
           {% with messages = get_flashed_messages(with_categories=true) %}
@@ -59,14 +60,13 @@
           {% block content %}{% endblock %}
         </div>
         <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
+          <div class="content-section ml-3" style="background-color: #9cdaf7; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);">
+            <h3 class="ml-3" style="color: #3c5e75">This is how it works</h3>
+            <p class='text-muted ml-3'>You can post whatever and however you like it, but if you dont't know what to start with, here's some guide:
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
+                
+                <li class="list-group-item list-group-item-light ml-1" style="background-color: #ebf7a7; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);">Tell us the name and genre of the book you've read or reading. Tell us who your favourite character is and why. What characters are your least favorite? Why? What would you do if you were them? What concepts make most sense for you if you're reading a science book? How real is what you're reading? Who is the author and how did he live? How did he die? Tell us everything.</li>
+                
               </ul>
             </p>
           </div>
