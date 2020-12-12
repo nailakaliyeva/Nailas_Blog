@@ -1,4 +1,5 @@
 
+
 import os
 import secrets
 import requests
@@ -25,4 +26,4 @@ def send_reset_email(user):
     {url_for('users.reset_token', token=token, _external=True)}
     If you did not make this request, then simply ignore this email and no changes will be made.
     '''
-    return requests.post("https://api.mailgun.net/v3/nailasblog.com/messages",auth=("api", current_app.config['API_KEY']),data={"from": "<mailgun@nailasblog.com>","to$
+    return requests.post("https://api.mailgun.net/v3/nailasblog.com/messages",auth=("api",current_app.config['API_KEY']),data={"from": "<mailgun@nailasblog.com>","to": [user.email, "nailasblog.com"],"subject": "Request to reset password","text": message})

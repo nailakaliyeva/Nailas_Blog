@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect, request, Blueprint
+from flask import render_template, url_for, flash, redirect, request, Blueprint, current_app
 from flask_login import login_user, current_user, logout_user, login_required
 from flaskblog import db, bcrypt
 from flaskblog.models import User, Post
@@ -6,8 +6,20 @@ from flaskblog.users.forms import (RegistrationForm, LoginForm, UpdateAccountFor
                                    RequestResetForm, ResetPasswordForm)
 from flaskblog.users.utils import save_picture, send_reset_email
 
-users = Blueprint('users', __name__)
+import requests
+import logging
+from http.client import HTTPConnection  # py3
 
+# log = logging.getLogger('requests.packages.urllib3')  # useless
+log = logging.getLogger('urllib3')  # works
+
+log.setLevel(logging.DEBUG)  # needed
+fh = logging.FileHandler("requests.log")
+log.addHandler(fh)
+
+requests.get('http://httpbin.org/')
+
+users = Blueprint('users', __name__)
 
 @users.route("/register", methods=['GET', 'POST'])
 def register():
@@ -85,6 +97,7 @@ def reset_request():
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         send_reset_email(user)
+        print(current_app.config['API_KEY'])
         flash('An email has been sent with instructions to reset your password.', 'info')
         return redirect(url_for('users.login'))
     return render_template('reset_request.html', title='Reset Password', form=form)

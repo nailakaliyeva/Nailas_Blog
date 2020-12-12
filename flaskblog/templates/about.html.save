@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="jumbotron" style="background-color:  #9cdaf7; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);">
+    <h1 class="display-4" style="color: #3c5e75;">Welcome to nailasblog.com!</h1>
+    <p class="lead">&nbsp There are so many great books but so little time to read them all. This blog was created after the author had realized her entire lifetime w$    <hr class="my-4">
+    <div class="media mt-3">
+        <img src="{{ url_for('static', filename='social_media_pics/twitter.png') }}" class="mr-3" alt="...">
+        <div class="media-body">
+            <h5 class="mt-4 ml-5" style="color: #3c5e75;"><a href Follow us on Twitter title = "Here should be a link to our Twitter account that doesn't exist yet">F$        </div>
+    </div>
+    <div class="media mt-3 ml-10">
+        <img src="{{ url_for('static', filename='social_media_pics/facebook.png') }}" class="mr-3" alt="...">
+        <div class="media-body">
+            <h5 class="mt-4 ml-5" style="color: #3c5e75;" "Here should be a link to our Facebook profile that doesn't exist yet"$        </div>
+    </div>
+    <div class="media mt-3">
+        <img src="{{ url_for('static', filename='social_media_pics/instagram.png') }}" class="mr-3" alt="...">
+        <div class="media-body">
+            <h5 class="mt-4 ml-5" style="color: #3c5e75;"><a href Follow us on Instagram title = "Here should be a link to our Instagram page that doesn't exist yet">$        </div>
+    </div>
+
+  </div>
+{% endblock content %}
