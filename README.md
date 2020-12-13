@@ -56,7 +56,7 @@ $ pip install gunicorn
 
 **To restart gunicorn** run:
 
-$ pkill gunicorn
+$ pkill gunicorn (**to first kill gunicorn**)
 
 (venv)<-----(make sure you activate your virtual environment when inside the project folder by running) 
 
