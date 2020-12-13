@@ -8,6 +8,7 @@ who have forgotten their passwords. When it comes to resetting passwords, there 
 2. Try unblocking your IP (sometimes it gets blocked by Google) by visiting [https://accounts.google.com/DisplayUnlockCaptcha](https://accounts.google.com/DisplayUnlockCaptcha)
 
 For ***devs***
+
 If you want to copy the project from GitHub simply run:
 $ git clone /path/to/repository
 
