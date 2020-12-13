@@ -10,50 +10,73 @@ who have forgotten their passwords. When it comes to resetting passwords, there 
 For ***devs***
 
 If you want to copy the project from GitHub simply run:
+
 $ git clone /path/to/repository
 
 However, if you want to copy the project from your local machine, use the secure copy command:
+
 $ scp -r Desktop/or/wherever/your/project/located/on/your/comp root@11.11.111.11(your remote IP): ~/Project/folder
 
 To create a virtual environment to run the application run:
 
 $ sudo apt install python3-pip
+
 then
+
 $ sudo apt install python3-venv
-then 
-$ python3 -m venv Project_folder/venv
 then
+
+$ python3 -m venv Project_folder/venv
+
+then
+
 $ source /venv/bin/activate
+
 from within your project folder to activate your virtual environment
 
 Run:
+
 $ pip install -r requirements.txt
+
 to install all the packages needed to run the application
 
 To install nginx to handle the front end run: (make sure you're also doing this within your venv)
+
 $ sudo apt install nginx
 
 To restart nginx run:
 
 $ systemctl stop nginx
+
 $ systemctl restart nginx
 
 To install gunicorn to handle the python files run: (make sure you're also doing this within your venv)
+
 $ pip install gunicorn
 
 To restart gunicorn run:
+
 $ pkill gunicorn
-(venv)<-----(make sure you activate your virtual environment when inside the project folder by running) $ source /venv/bin/activate
+
+(venv)<-----(make sure you activate your virtual environment when inside the project folder by running) 
+
+$ source /venv/bin/activate
+
 then run the actual command to start gunicorn 
+
 $ gunicorn -w 3 run:app 
+
 (where 3 is number of cores on your remote machine times 2 plus 1. 
 To find out the num of cores on your remote machine run 
+
 $ nproc --all)
 
 To install supervisor to monitor our gunicorn run: (make sure you're also doing this within your venv)
+
 $ sudo apt install supervisor
 
 To reload supervisor run:
+
 $ sudo supervisorctl reload
 
 If you have any requests errors associated with /users/routes.py, (which also takes care of your reset password function)
@@ -65,28 +88,35 @@ to .env file from the config.json file they are currently in on the remote compu
 replace 'current_app.config['API_KEY']' on line 29 in users/utils.py with os.getenv('API_KEY')
 
 To check uncomplicated firewall status and to SEE allowed ports run:
+
 $ sudo ufw status
 
 To change some default traffic settings run:
 
 $ sudo ufw default allow outgoing 
+
 OR/AND
+
 $ sudo ufw default deny incoming 
 
 to allow outgoing or deny incoming traffics respectively
 
 To allow certain ports run:
+
 $ sudo ufw allow #### (where #### is the port number)
 
 To disallow certain ports run:
+
 $ sudo ufw delete allow #### (where #### is the port number)
 
 To enable all the ufw rules run:
+
 $ sudo ufw enable
 
 You have to be added as the user of sudo group by the root or be the root yourself to add or delete ufw rules
 
 If you want to kill certain ports run:
+
 $ fuser -k #### (where #### is the port number)
 
 Other than that, I used Jinja2 just to practice, however, I strongly support front end done with React components rather 
