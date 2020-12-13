@@ -42,3 +42,5 @@ Starting new HTTPS connection (1): api.mailgun.net:443
 https://api.mailgun.net:443 "POST /v3/nailasblog.com/messages HTTP/1.1" 200 99
 Starting new HTTPS connection (1): api.mailgun.net:443
 https://api.mailgun.net:443 "POST /v3/nailasblog.com/messages HTTP/1.1" 200 99
+Starting new HTTPS connection (1): api.mailgun.net:443
+https://api.mailgun.net:443 "POST /v3/nailasblog.com/messages HTTP/1.1" 200 99
