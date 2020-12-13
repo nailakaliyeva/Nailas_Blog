@@ -1,4 +1,8 @@
    This project has already been deployed and is running live on [www.nailasblog.com](www.nailasblog.com)
+   
+   ![nailasblog](https://user-images.githubusercontent.com/42359973/102025212-827a2900-3d64-11eb-81d2-151dc01747af.gif)
+
+   
 The blog is user friendly and pretty intuitive. I'm using a free Mailgun API to send recovery emails to users 
 who have forgotten their passwords. 
 
