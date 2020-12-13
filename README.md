@@ -127,5 +127,5 @@ If you want **to kill certain ports** run:
 ```
 $ fuser -k #### (where #### is the port number)
 ```
-Other than that, I used Jinja2 just to practice, however, I strongly reccomend and support front end done with React components rather 
-than  barebone HTML/CSS/Bootstrap since I find React more efficient and sophisticated. 
+This application was mainly created to practice project deployment on Linode server. Other than that, I used Jinja2 also to try something new, however, I strongly reccomend and support front end done with React components rather 
+than  barebone HTML/CSS/Bootstrap since I find React and Flux more efficient and sophisticated. 
