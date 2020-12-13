@@ -1,4 +1,4 @@
-This project has already been deployed and is running live on [www.nailasblog.com](www.nailasblog.com)
+   This project has already been deployed and is running live on [www.nailasblog.com](www.nailasblog.com)
 The blog is user friendly and pretty intuitive. I'm using a free Mailgun API to send recovery emails to users 
 who have forgotten their passwords. 
 
